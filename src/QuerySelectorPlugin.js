@@ -17,6 +17,13 @@ const QuerySelectorPlugin = () => {
   ];
 
   const updateQueryEditor = (query) => {
+    const graphiql = document.querySelector('.graphiql-query-editor');
+    if (graphiql) {
+      const editor = graphiql.querySelector('.CodeMirror').CodeMirror;
+      if (editor) {
+        editor.setValue(query);
+      }
+    }
   };
 
   return {
